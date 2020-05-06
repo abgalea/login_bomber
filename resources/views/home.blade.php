@@ -9,7 +9,15 @@
         </div>  
         <img class="mx-auto d-block" src="/img/logo_bom.jpg" alt="Card image cap">
         <div class="card-body">
-            
+            @php
+                            $id = Auth::user()->revista;
+                            $url = "http://admin.test/revista/".$id;
+                            $json = file_get_contents($url);
+                            $obj = json_decode($json, true);
+                            // echo $obj[0]["jerarquia"];
+                        @endphp
+            <img src="{{  $obj[0]["foto"] }}" class="mx-auto d-block img-circle elevation-2" alt="User Image">
+            <h3>Personal Policial: {{ $obj[0]["jerarquia"] }} {{ $obj[0]["apellido"] }} {{ $obj[0]["nombres"] }}</h3>
         </div>
         <div class="card-footer">
             Policía de la Provincia de Misiones - Ministerio de Gobierno

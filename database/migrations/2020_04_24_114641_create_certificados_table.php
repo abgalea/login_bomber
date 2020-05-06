@@ -27,6 +27,8 @@ class CreateCertificadosTable extends Migration
             $table->string('observaciones');
             $table->string('previa');
             $table->string('usuario');
+            $table->string('dependencia');
+            $table->string('localidad');
             $table->timestamps();
             $table->softDeletes();
         });

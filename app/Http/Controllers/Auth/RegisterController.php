@@ -38,7 +38,7 @@ class RegisterController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('guest');
+        $this->middleware('auth');
     }
 
     /**
@@ -50,6 +50,11 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
+            'revista' => ['required', 'string', 'max:6'],
+            'nivel' => ['required', 'string'],
+            'localidad' => ['required', 'string'],
+            'dependencia' => ['required', 'string'],
+            'username' => ['required', 'string', 'max:20'],
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
@@ -65,6 +70,11 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
         return User::create([
+            'revista' => $data['revista'],
+            'username' => $data['username'],
+            'localidad' => $data['localidad'],
+            'dependencia' => $data['dependencia'],
+            'nivel' => $data['nivel'],
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),

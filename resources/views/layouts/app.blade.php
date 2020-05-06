@@ -164,15 +164,23 @@
                 <div class="sidebar">
                     <!-- Sidebar user panel (optional) -->
                     <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+                        @php
+                            $id = Auth::user()->revista;
+                            $url = "http://admin.test/revista/".$id;
+                            $json = file_get_contents($url);
+                            $obj = json_decode($json, true);
+                            // echo $obj[0]["jerarquia"];
+                        @endphp
                         <div class="image">
-                            <img src="{{ asset('dist/img/user2-160x160.jpg')}}" class="img-circle elevation-2" alt="User Image">
+                            <img src="{{  $obj[0]["foto"] }}" class="img-circle elevation-2" alt="User Image">
                         </div>
                         <div class="info">
                             <a href="#" class="d-block">
                                 @guest
                                 <a class="nav-link" href="{{ route('login') }}">{{ __('Iniciar Sesión') }}</a>
                                 @else
-                                {{ Auth::user()->name }}
+                                
+                                {{ $obj[0]["jerarquia"] }} <br> {{ $obj[0]["apellido"] }}
                                 <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                            document.getElementById('logout-form').submit();">
                                     Cerrar Sesión
@@ -223,7 +231,9 @@
                                 </a>
                             </li>
 
-                            <li class="nav-item has-treeview">
+                            
+
+                            {{-- <li class="nav-item has-treeview">
                                 <a href="#" class="nav-link">
                                     <i class="nav-icon far fa-sticky-note"></i>
                                     <p>Notas<i class="fas fa-angle-left right"></i></p>
@@ -251,7 +261,7 @@
                                         </a>
                                     </li>
                                 </ul>
-                            </li>
+                            </li> --}}
 
                         </ul>
                     </nav>

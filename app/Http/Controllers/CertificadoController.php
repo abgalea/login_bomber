@@ -4,49 +4,65 @@ namespace App\Http\Controllers;
 
 use App\Certificados;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class CertificadoController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index(Request $request)
     {
         $query = trim($request->get('search'));
-        // $usuarioLogueado = user()->id;
-        if ($request){
-            $certificados = Certificados::where('orden', 'LIKE', '%'.$query.'%')
-            ->orWhere('nro_certificado','LIKE',"%$query%")
-            ->orWhere('nombre_comerciante','LIKE',"%$query%")
-            ->orWhere('nombre_comercio','LIKE',"%$query%")
-            ->orWhere('observaciones','LIKE',"%$query%")
-            // ->where('usuarios','LIKE',"%$usuarioLogueado%")
-            ->orderBy('id', 'desc')
-            ->paginate(5);
-            return view('certificados.index', ['certificados' => $certificados, 'search' => $query]);
+        
+        if (Auth::user()->nivel == 'cargador'){
+            $certificados = Certificados::where('usuario', '=', Auth::user()->username)
+             ->orderBy('id', 'desc')
+             ->paginate(5);
+             return view('certificados.index', ['certificados' => $certificados, 'search' => $query]);
         }
+        
+        if (Auth::user()->nivel == 'supervisor'){
+            $certificados = Certificados::where('localidad', 'LIKE', Auth::user()->localidad)
+            ->where('dependencia','LIKE',Auth::user()->dependencia)
+             ->orderBy('id', 'desc')
+             ->paginate(5);
+             return view('certificados.index', ['certificados' => $certificados, 'search' => $query]);
+        }
+
+        if (Auth::user()->nivel == 'admin'){
+            $certificados = Certificados::where('localidad', 'LIKE', Auth::user()->localidad)
+             ->orWhere('nro_certificado','LIKE',"%$query%")
+             ->orWhere('nombre_comerciante','LIKE',"%$query%")
+             ->orWhere('nombre_comercio','LIKE',"%$query%")
+             ->orWhere('observaciones','LIKE',"%$query%")
+             ->orWhere('localidad','LIKE',"%$query%")
+             ->orWhere('dependencia','LIKE',"%$query%")
+             ->orWhere('usuario','LIKE',"%$query%")
+             ->orderBy('id', 'desc')
+             ->paginate(5);
+             return view('certificados.index', ['certificados' => $certificados, 'search' => $query]);
+        }
+        
+        // if ($request){
+        //     $certificados = Certificados::where('usuario', '=', Auth::user()->username)
+        //     ->orWhere('nro_certificado','LIKE',"%$query%")
+        //     ->orWhere('nombre_comerciante','LIKE',"%$query%")
+        //     ->orWhere('nombre_comercio','LIKE',"%$query%")
+        //     ->orWhere('observaciones','LIKE',"%$query%")
+        //     ->where('usuario', '=', Auth::user()->username)
+        //     ->orderBy('id', 'desc')
+        //     ->paginate(5);
+        //     return view('certificados.index', ['certificados' => $certificados, 'search' => $query]);
+        // }
         // $certificados = Certificados::all();
         // return view('certificados.index', ['certificados' => $certificados]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    
     public function create()
     {
         return view('certificados.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+    
     public function store(Request $request)
     {
             // print_r($request -> all());
@@ -56,6 +72,8 @@ class CertificadoController extends Controller
             $certificado->fecha = $request->input('fecha');
             $certificado->desde = $request->input('desde');
             $certificado->hasta = $request->input('hasta');
+            $certificado->localidad = $request->input('localidad');
+            $certificado->dependencia = $request->input('dependencia');
             $certificado->nombre_comerciante = $request->input('nombre_comerciante');
             $certificado->nombre_comercio = $request->input('nombre_comercio');
             $certificado->rubro = $request->input('rubro');
@@ -72,35 +90,18 @@ class CertificadoController extends Controller
             return redirect('/certificados/'.$idRecienGuardada);
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    
     public function show($id)
     {
         return view('certificados.show', ['certificados'=>Certificados::findOrFail($id)]);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
         return view('certificados.edit', ['certificados'=>Certificados::findOrFail($id)]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+  
     public function update(Request $request, $id)
     {
         // print_r($request -> all());
@@ -109,6 +110,8 @@ class CertificadoController extends Controller
         $certificado->fecha = $request->get('fecha');
         $certificado->desde = $request->get('desde');
         $certificado->hasta = $request->get('hasta');
+        $certificado->localidad = $request->get('localidad');
+        $certificado->dependencia = $request->get('dependencia');
         $certificado->nombre_comerciante = $request->get('nombre_comerciante');
         $certificado->nombre_comercio = $request->get('nombre_comercio');
         $certificado->rubro = $request->get('rubro');
@@ -122,12 +125,7 @@ class CertificadoController extends Controller
         return redirect('/certificados');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    
     public function destroy($id)
     {
         $certificado = Certificados::findOrFail($id);

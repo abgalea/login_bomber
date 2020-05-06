@@ -34,6 +34,12 @@
             Valido Desde: <b>{{date('d/m/y', strtotime($certificados->desde))}}</b> Hasta: <b>{{date('d/m/y', strtotime($certificados->hasta))}}</b>
             <p>Emitido: <b>{{date('d/m/y', strtotime($certificados->fecha))}}</b> <br> <b>Puede Validar los Datos del Presente 
               Certificado en la Siguiente URL - <a href="https://policiamisiones.gob.ar/CIU/index.php?id={{$certificados->id}}">https://policiamisiones.gob.ar/CIU/</a></b>
+              <br>{!!QrCode::size(200)->generate("https://policiamisiones.gob.ar/CIU/index.php?id={{$certificados->id}}") !!}
+              <br>
+              <br>
+              <br>
+              <br>
+              <br>
             </p>
           <br><p></p><hr style='border:dashed #000 1px'><table width='100%'>
         <tbody>
@@ -44,7 +50,7 @@
           </tr>
         </tbody>
       </table>
-            <b>EL FUNCIONARIO DE POLICIA QUE SUSCRIBE CERTIFICA QUE: EL USO / LOCAL</b>
+            <b>EL FUNCIONARIO DE POLICIA QUE SUSCRIBE CERTIFICA QUE: EL USO / LOCAL</b><br>
             Rubro: <b>{{ $certificados->rubro}}.</b><br>
             Titular: <b>{{ $certificados->nombre_comerciante}}.</b><br> 
             Domicilio: <b>{{ $certificados->direccion}}.</b><br> 
@@ -55,7 +61,8 @@
             Valido Desde: <b>{{date('d/m/y', strtotime($certificados->desde))}}</b> Hasta: <b>{{date('d/m/y', strtotime($certificados->hasta))}}</b>
             <p>Emitido: <b>{{date('d/m/y', strtotime($certificados->fecha))}}</b> <br> <b>Puede Validar los Datos del Presente 
               Certificado en la Siguiente URL - <a href="https://policiamisiones.gob.ar/CIU/index.php?id={{$certificados->id}}">https://policiamisiones.gob.ar/CIU/</a></b>
-            </p>
+              <br>{!!QrCode::size(200)->generate("https://policiamisiones.gob.ar/CIU/index.php?id={{$certificados->id}}") !!}
+              <br><br><br><br><br></p>
           
           <br><p></p><hr style='border:dashed #000 1px'><table width='100%'>
         <tbody>
@@ -66,7 +73,7 @@
           </tr>
         </tbody>
       </table>
-            <b>EL FUNCIONARIO DE POLICIA QUE SUSCRIBE CERTIFICA QUE: EL USO / LOCAL</b>
+            <b>EL FUNCIONARIO DE POLICIA QUE SUSCRIBE CERTIFICA QUE: EL USO / LOCAL</b><br>
             Rubro: <b>{{ $certificados->rubro}}.</b><br>
             Titular: <b>{{ $certificados->nombre_comerciante}}.</b><br> 
             Domicilio: <b>{{ $certificados->direccion}}.</b><br> 
@@ -77,7 +84,8 @@
             Valido Desde: <b>{{date('d/m/y', strtotime($certificados->desde))}}</b> Hasta: <b>{{date('d/m/y', strtotime($certificados->hasta))}}</b>
             <p>Emitido: <b>{{date('d/m/y', strtotime($certificados->fecha))}}</b> <br> <b>Puede Validar los Datos del Presente 
               Certificado en la Siguiente URL - <a href="https://policiamisiones.gob.ar/CIU/index.php?id={{$certificados->id}}">https://policiamisiones.gob.ar/CIU/</a></b>
-            </p>
+              <br>{!!QrCode::size(200)->generate("https://policiamisiones.gob.ar/CIU/index.php?id={{$certificados->id}}") !!}
+            <br><br><br><br><br></p>
           
     </div>
   </div>

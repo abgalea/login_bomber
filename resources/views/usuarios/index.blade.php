@@ -17,6 +17,7 @@
           <th scope="col">ID</th>
           <th scope="col">Nombre</th>
           <th scope="col">Correo</th>
+          <th scope="col">Revista</th>
           <th scope="col">Opcion</th>
         </tr>
       </thead>
@@ -26,6 +27,7 @@
           <th scope="row">{{$user->id}}</th>
           <td>{{$user->name}}</td>
           <td>{{$user->email}}</td>
+          <td>{{$user->revista}}</td>
           <td>
           
           <form action="{{ route('usuarios.destroy', $user->id) }}" method="POST">
