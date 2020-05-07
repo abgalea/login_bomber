@@ -3,11 +3,11 @@
 @section('content')
 
 {{-- <div class="container"> --}}
-    <h2>Lista de Certificados <a href="certificados/create"><button type="button" class="btn btn-success float-right">Agregar Certificados</button></a></h2>
+    <h2>Lista de Certificados - CIU (Cada certificado tiene un <b>Código de Identificación Único</b>) <a href="certificados/create"><button type="button" class="btn btn-success float-right">Agregar Certificados</button></a></h2>
     <table class="table table-bordered table-hover">
         <thead>
             <tr>
-            <th scope="col">ID</th>
+            <th scope="col">CIU</th>
             <th scope="col">Info Certificado</th>
             <th scope="col">Fecha Válida</th>
             <th scope="col">Titular</th>

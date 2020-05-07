@@ -180,11 +180,11 @@
                                 <a class="nav-link" href="{{ route('login') }}">{{ __('Iniciar Sesión') }}</a>
                                 @else
                                 
-                                {{ $obj[0]["jerarquia"] }} <br> {{ $obj[0]["apellido"] }}
-                                <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                {{ $obj[0]["jerarquia"] }} {{ $obj[0]["apellido"] }}
+                                {{-- <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                            document.getElementById('logout-form').submit();">
                                     Cerrar Sesión
-                                </a>
+                                </a> --}}
 
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST"
                                     style="display: none;">
@@ -208,25 +208,37 @@
                                 </a>
                             </li>
 
+                            <?php if(Auth::user()->nivel == 'admin'){ ?>
+
                             <li class="nav-item">
                                 <a href="{{ url('usuarios')}}"
                                     class="{{ Request::path() === '/usuarios' ? 'nav-link' : 'nav-link' }}">
                                     <i class="nav-icon fas fa-users"></i>
                                     <p>
                                         Usuarios
-                                        <?php use App\User; $users_count = User::all()->count(); ?>
-                                        <span class="right badge badge-danger">{{ $users_count ?? '0' }}</span>
+                                       
+                                        <span class="right badge badge-danger"></span>
                                     </p>
                                 </a>
                             </li>
+                            <?php } ?>
                             <li class="nav-item">
                                 <a href="{{ url('certificados')}}"
                                     class="{{ Request::path() === 'usuarios' ? 'nav-link ' : 'nav-link' }}">
-                                    <i class="nav-icon fas fa-users"></i>
+                                    <i class="far fa-file"></i>
                                     <p>
                                         Certificados
                                         <?php use App\Certificados; $certificado_count = Certificados::all()->count(); ?>
                                         <span class="right badge badge-danger">{{ $certificado_count ?? '0' }}</span>
+                                    </p>
+                                </a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"  class="{{ Request::path() === 'usuarios' ? 'nav-link ' : 'nav-link' }}">
+                                    <i class="fas fa-user-lock"></i>
+                                    <p>
+                                        Cerrar Sesión
                                     </p>
                                 </a>
                             </li>
