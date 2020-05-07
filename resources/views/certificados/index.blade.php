@@ -22,7 +22,7 @@
             @foreach ($certificados as $certificado)
 
             <tr>
-            <th scope="row">{{$certificado->id}}</th>
+            <th scope="row">CIU{{$certificado->id}}</th>
             <td>
               Nro: <b>{{$certificado->nro_certificado}}</b><br>
               Emitido: <b>{{date('d/m/y', strtotime($certificado->fecha))}}</b>

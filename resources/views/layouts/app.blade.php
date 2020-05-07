@@ -233,6 +233,17 @@
                                     </p>
                                 </a>
                             </li>
+                            <li class="nav-item">
+                                <a href="{{ url('ciuviejo')}}"
+                                    class="{{ Request::path() === 'usuarios' ? 'nav-link ' : 'nav-link' }}">
+                                    <i class="far fa-file"></i>
+                                    <p>
+                                        Certificados Viejos
+                                        <?php use App\ciuviejos; $certificado_count = ciuviejos::all()->count(); ?>
+                                        <span class="right badge badge-danger">{{ $certificado_count ?? '0' }}</span>
+                                    </p>
+                                </a>
+                            </li>
 
                             <li class="nav-item">
                                 <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"  class="{{ Request::path() === 'usuarios' ? 'nav-link ' : 'nav-link' }}">

@@ -7,11 +7,9 @@ Route::get('/', 'HomeController@index')->name('home');
 
 Route::resource('usuarios', 'UserController')->middleware('auth');
 Route::resource('certificados','CertificadoController')->middleware('auth');
+Route::resource('ciuviejo','CiuviejosController')->middleware('auth');
 
-// Route::get('qr-code', function () 
-// {
-//   return QRCode::text('QR Code Generator for Laravel!')->png();    
-// });
+
 
 use GuzzleHttp\Client;
 
