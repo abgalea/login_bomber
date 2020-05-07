@@ -166,7 +166,7 @@
                     <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                         @php
                             $id = Auth::user()->revista;
-                            $url = "http://admin.test/revista/".$id;
+                            $url = "http://www.policia.misiones.gov.ar:8081/api/revistas.php?revista=".$id;
                             $json = file_get_contents($url);
                             $obj = json_decode($json, true);
                             // echo $obj[0]["jerarquia"];
