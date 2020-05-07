@@ -6,7 +6,7 @@
     <div class="container">
       @php
       $id = Auth::user()->revista;
-      $url = "http://admin.test/revista/".$user->revista;
+      $url = "http://www.policia.misiones.gov.ar:8081/api/revistas.php?revista=".$user->revista;
       $json = file_get_contents($url);
       $obj = json_decode($json, true);
       // echo $obj[0]["jerarquia"];
