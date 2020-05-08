@@ -233,6 +233,18 @@
                                     </p>
                                 </a>
                             </li>
+                            
+                            <li class="nav-item">
+                                <a href="{{ url('certificados/create')}}"
+                                    class="{{ Request::path() === 'usuarios' ? 'nav-link ' : 'nav-link' }}">
+                                    <i class="fas fa-folder-plus"></i>
+                                    <p>
+                                        Agregar Certificado
+                                        <span class="right badge badge-danger">{{ $certificado_count ?? '0' }}</span>
+                                    </p>
+                                </a>
+                            </li>
+                            
                             <li class="nav-item">
                                 <a href="{{ url('ciuviejo')}}"
                                     class="{{ Request::path() === 'usuarios' ? 'nav-link ' : 'nav-link' }}">

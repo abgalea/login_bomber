@@ -7,7 +7,7 @@
     <div class="col-lg-12">
       <div class="card">
         <div class="card-body">
-    <h2>Lista de Certificados - CIU (Cada certificado tiene un <b>Código de Identificación Único</b>) <a href="certificados/create"><button type="button" class="btn btn-success float-right">Agregar Certificados</button></a></h2>
+    <h2>Lista de Certificados - CIU (Cada certificado tiene un <b>Código de Identificación Único</b>) <!--<a href="certificados/create"><button type="button" class="btn btn-success float-right">Agregar Certificados</button></a>--></h2>
     <table class="table table-bordered table-hover">
         <thead>
             <tr>
