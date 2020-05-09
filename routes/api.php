@@ -18,4 +18,12 @@ use Illuminate\Support\Facades\Route;
 // Route::middleware('auth:api')->get('/user', function (Request $request) {
 //     return $request->user();
 // });
-Route::resource('certificado','ElCertificado');
+// Route::resource('certificado','ElCertificado');
+Route::group(["middleware" => "apikey.validate"], function () {
+
+    //Rutas
+    Route::post("login", "Api\UserController@postLogin");
+    Route::get("cursos", "Api\CursoController@getCursos");
+    Route::resource('certificado','ElCertificado');
+  
+  });
