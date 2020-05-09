@@ -53,7 +53,7 @@
                   {{-- <a href="{{ route('certificados.edit', $certificado->id) }}"><button type="button" class="btn btn-info">Editar</button></a> --}}
                   @method('DELETE')
                   @csrf
-                  <button type="submit" class="btn btn-danger"><i class="fas fa-plus-square"></i></button>
+                  <button type="submit" class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
                 </form>
             </td>
             </tr>
