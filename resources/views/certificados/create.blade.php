@@ -1,59 +1,88 @@
 @extends('layouts.app')
 
 @section('content')
-
-<div class="container">
-    <div class="row">
-        <div class="col-sm-6">
+<div class="container-fluid">
+  <div class="row">
+    <!-- left column -->
+    <div class="col-md-6">
+      <!-- general form elements -->
+      <div class="card card-primary">
+        <div class="card-header">
+          <h3 class="card-title">Nuevo Certificado</h3>
+        </div>
             <form action="/certificados" method="POST">
+              <div class="card-body">
                 @csrf
-                <div class="form-group">
-                    <label for="exampleInputEmail1">Nro Orden</label>
-                    <input type="text" class="form-control" name="orden" aria-describedby="emailHelp">
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">Orden</label>
+                    <div class="col-sm-10">
+                    <input required type="text" class="form-control" name="orden" aria-describedby="emailHelp">
+                    </div>
                 </div>
-                <div class="form-group">
-                  <label for="exampleInputEmail1">Nro Certificado</label>
-                  <input type="text" class="form-control" name="nro_certificado" aria-describedby="emailHelp">
+                <div class="form-group row">
+                  <label class="col-sm-2 col-form-label">Nro Certificado</label>
+                  <div class="col-sm-10">
+                  <input required type="text" class="form-control" placeholder="Nro del Certificado" name="nro_certificado" aria-describedby="emailHelp">
+                  </div>
                 </div>
-                <div class="form-group">
-                  <label for="exampleInputEmail1">Fecha de Emisión</label>
-                  <input type="date" class="form-control" name="fecha" aria-describedby="emailHelp">
+                <div class="form-group row">
+                  <label class="col-sm-2 col-form-label">Fecha de Emisión</label>
+                  <div class="col-sm-10">
+                  <input required type="date" class="form-control" name="fecha" value="<?php echo  date('Y-m-d') ?>" aria-describedby="emailHelp">
+                  </div>
                 </div>
-                <div class="form-group">
-                  <label for="exampleInputEmail1">Válido desde</label>
-                  <input type="date" class="form-control" name="desde" aria-describedby="emailHelp">
+                <div class="form-group row">
+                  <label class="col-sm-2 col-form-label">Válido desde</label>
+                  <div class="col-sm-10">
+                  <input required type="date" class="form-control" name="desde" value="<?php echo  date('Y-m-d') ?>" aria-describedby="emailHelp">
+                  </div>
                 </div>
-                <div class="form-group">
-                    <label for="exampleInputEmail1">Válido Hasta</label>
-                    <input type="date" class="form-control" name="hasta" aria-describedby="emailHelp">
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">Válido Hasta</label>
+                    <div class="col-sm-10">
+                    <input required type="date" class="form-control" name="hasta" value="<?php echo  date('Y-m-d', strtotime('+1 year')); ?>" aria-describedby="emailHelp">
+                    </div>
                 </div>
-                <div class="form-group">
-                  <label for="exampleInputEmail1">Nombre Titular</label>
-                  <input type="text" class="form-control" name="nombre_comerciante" aria-describedby="emailHelp">
+                <div class="form-group row">
+                  <label class="col-sm-2 col-form-label">Nombre Titular</label>
+                  <div class="col-sm-10">
+                  <input required type="text" class="form-control" name="nombre_comerciante" placeholder="Titular del Comercio" aria-describedby="emailHelp">
+                  </div>
                 </div>
-                <div class="form-group">
-                  <label for="exampleInputEmail1">Nombre del Comercio</label>
-                  <input type="text" class="form-control" name="nombre_comercio" aria-describedby="emailHelp">
+                <div class="form-group row">
+                  <label class="col-sm-2 col-form-label">Nombre del Comercio</label>
+                  <div class="col-sm-10">
+                  <input required type="text" class="form-control" name="nombre_comercio" placeholder="Nombre del Comercio" aria-describedby="emailHelp">
+                  </div>
                 </div>
-                <div class="form-group">
-                    <label for="exampleInputEmail1">Rubro</label>
-                    <input type="text" class="form-control" name="rubro" aria-describedby="emailHelp">
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">Rubro</label>
+                    <div class="col-sm-10">
+                    <input required type="text" class="form-control" name="rubro" placeholder="Rubro Comercial o Actividad" aria-describedby="emailHelp">
+                    </div>
                 </div>
-                <div class="form-group">
-                  <label for="exampleInputEmail1">Dirección</label>
-                  <input type="text" class="form-control" name="direccion" aria-describedby="emailHelp">
+                <div class="form-group row">
+                  <label class="col-sm-2 col-form-label">Dirección</label>
+                  <div class="col-sm-10">
+                  <input required type="text" class="form-control" name="direccion" placeholder="Dirección del Comercio" aria-describedby="emailHelp">
+                  </div>
                 </div>
-                <div class="form-group">
-                  <label for="exampleInputEmail1">Detalle - Observaciones</label>
-                  <input type="text" class="form-control" name="observaciones" aria-describedby="emailHelp">
+                <div class="form-group row">
+                  <label class="col-sm-2 col-form-label">Detalle - Observaciones</label>
+                  <div class="col-sm-10">
+                  <input required type="text" class="form-control" name="observaciones" placeholder="Algun detalle para aclarar" aria-describedby="emailHelp">
+                  </div>
                 </div>
-                <div class="form-group">
-                  <label for="exampleInputEmail1">Previa</label>
-                  <input type="text" class="form-control" name="previa" value="0" aria-describedby="emailHelp">
+                <div class="form-group row">
+                  <label class="col-sm-2 col-form-label">Previa</label>
+                  <div class="col-sm-10">
+                  <input required type="text" class="form-control" name="previa" value="0" aria-describedby="emailHelp">
+                  </div>
                 </div>
-                <div class="form-group">
-                  <label for="exampleInputEmail1">Localidad</label>
-                  <select class="form-control" name="localidad" >
+                <div class="form-group row">
+                  <label class="col-sm-2 col-form-label">Localidad</label>
+                  <div class="col-sm-10">
+                  <select required class="form-control" name="localidad" >
                     <option selected disabled>SELECCIONAR UNA OPCIÓN</option>
                     <option value='25 de Mayo'>25 de Mayo</option>
                     <option value='9 de Julio'>9 de Julio</option>
@@ -132,17 +161,30 @@
                     <option value='Santo Pipo'>Santo Pipo</option>
                     <option value='Tres Capones'>Tres Capones</option>
                   </select>
+                  </div>
                 </div>
-                <div class="form-group">
-                  <label for="exampleInputPassword1">Usuario</label>
-                  <input type="text" value="{{ auth()->user()->name }}" class="form-control" disabled>
-                  <input type="hidden" class="form-control" value="{{ auth()->user()->username }}" name="usuario">
-                  <input type="hidden" class="form-control" value="{{ auth()->user()->dependencia }}" name="dependencia">
+                <div class="form-group row">
+                  <label class="col-sm-2 col-form-label">Usuario</label>
+                  <div class="col-sm-10">
+                    <input type="text" value="{{ auth()->user()->name }}" class="form-control" disabled>
+                  
+                    <input type="hidden" class="form-control" value="{{ auth()->user()->username }}" name="usuario">
+                    <input type="hidden" class="form-control" value="{{ auth()->user()->dependencia }}" name="dependencia">
+                  </div>
                 </div>
-                <button type="submit" class="btn btn-primary">Registrar</button>
-              </form>
-        </div>
+              </div>
+              <!-- /.card-body -->
+              <div class="card-footer">
+                <button type="submit" class="btn btn-primary">Generar Certificado</button>
+              </div>
+            </form>
+          </div>
+          
+        <!-- /.card -->
+      </div>
+      <!--/.col (right) -->
     </div>
-</div>
+    <!-- /.row -->
+  </div><!-- /.container-fluid -->
     
 @endsection

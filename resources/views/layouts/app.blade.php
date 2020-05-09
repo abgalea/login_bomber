@@ -215,35 +215,37 @@
                                     class="{{ Request::path() === '/usuarios' ? 'nav-link' : 'nav-link' }}">
                                     <i class="nav-icon fas fa-users"></i>
                                     <p>
-                                        Usuarios
-                                       
+                                        Lista de Usuarios                                       
                                         <span class="right badge badge-danger"></span>
                                     </p>
                                 </a>
                             </li>
                             <?php } ?>
-                            <li class="nav-item">
-                                <a href="{{ url('certificados')}}"
-                                    class="{{ Request::path() === 'usuarios' ? 'nav-link ' : 'nav-link' }}">
-                                    <i class="far fa-file"></i>
-                                    <p>
-                                        Certificados
-                                        <?php use App\Certificados; $certificado_count = Certificados::all()->count(); ?>
-                                        <span class="right badge badge-danger">{{ $certificado_count ?? '0' }}</span>
-                                    </p>
-                                </a>
-                            </li>
-                            
+
                             <li class="nav-item">
                                 <a href="{{ url('certificados/create')}}"
                                     class="{{ Request::path() === 'usuarios' ? 'nav-link ' : 'nav-link' }}">
                                     <i class="fas fa-folder-plus"></i>
                                     <p>
-                                        Agregar Certificado
-                                        <span class="right badge badge-danger">{{ $certificado_count ?? '0' }}</span>
+                                        Generar Certificado
+                                        <span class="right badge badge-danger"></span>
                                     </p>
                                 </a>
                             </li>
+
+
+                            <li class="nav-item">
+                                <a href="{{ url('certificados')}}"
+                                    class="{{ Request::path() === 'usuarios' ? 'nav-link ' : 'nav-link' }}">
+                                    <i class="far fa-file"></i>
+                                    <p>
+                                        Lista de Certificados                                        
+                                        <span class="right badge badge-danger"></span>
+                                    </p>
+                                </a>
+                            </li>
+                            
+                            
                             
                             <li class="nav-item">
                                 <a href="{{ url('ciuviejo')}}"
@@ -251,8 +253,7 @@
                                     <i class="far fa-file"></i>
                                     <p>
                                         Certificados Viejos
-                                        <?php use App\ciuviejos; $certificado_count = ciuviejos::all()->count(); ?>
-                                        <span class="right badge badge-danger">{{ $certificado_count ?? '0' }}</span>
+                                        <span class="right badge badge-danger"></span>
                                     </p>
                                 </a>
                             </li>
@@ -261,7 +262,7 @@
                                 <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"  class="{{ Request::path() === 'usuarios' ? 'nav-link ' : 'nav-link' }}">
                                     <i class="fas fa-user-lock"></i>
                                     <p>
-                                        Cerrar Sesión
+                                        Salir
                                     </p>
                                 </a>
                             </li>
@@ -322,7 +323,7 @@
             <!-- /.content-wrapper -->
             <footer class="main-footer">
                 <!-- NO QUITAR -->
-                <strong>Policía de Misiones - Sistema de Certificados de Identificación Única de Bomberos (CIUB)
+                <strong>Policía de Misiones - Sistema de Certificados de Identificación Única de Bomberos (CIUB) <img class="rounded" width="20px" src="/img/logo_bom.jpg" alt="Card image cap">
                     <div class="float-right d-none d-sm-inline-block">
                         <b>Version</b> 1.0
                     </div>
