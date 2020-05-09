@@ -24,11 +24,11 @@
         </tbody>
       </table>
             <h3>EL FUNCIONARIO DE POLICIA QUE SUSCRIBE CERTIFICA QUE: EL USO / LOCAL</h3>
-            Rubro: <b>{{ $certificados->rubro}}.</b><br>
             Titular: <b>{{ $certificados->nombre_comerciante}}.</b><br> 
-            Domicilio: <b>{{ $certificados->direccion}}.</b><br> 
             Comercio: <b>{{ $certificados->nombre_comercio}}.</b><br> 
-            Presentó todas las Documentaciones referidas al Sistema de Protección contra Incendios, acorde al proyecto presentado oportunamente.-<br> 
+            Rubro: <b>{{ $certificados->rubro}}.</b><br>
+            Domicilio: <b>{{ $certificados->direccion}}.</b><br> 
+            PRESENTÓ TODAS LAS DOCUMENTACIONES REFERIDAS AL SISTEMA DE PROTECCIÓN CONTRA INCENDIOS, ACORDE AL PROYECTO PRESENTADO OPORTÚNAMENTE.<br> 
             Observaciones: <b>{{ $certificados->observaciones}}.</b> | Nro Certificado: <b>{{ $certificados->nro_certificado}}</b><br> 
             Nro Previa: <b>{{ $certificados->previa}}</b><br> 
             Valido Desde: <b>{{date('d/m/y', strtotime($certificados->desde))}}</b> Hasta: <b>{{date('d/m/y', strtotime($certificados->hasta))}}</b>
@@ -51,11 +51,11 @@
         </tbody>
       </table>
             <b>EL FUNCIONARIO DE POLICIA QUE SUSCRIBE CERTIFICA QUE: EL USO / LOCAL</b><br>
-            Rubro: <b>{{ $certificados->rubro}}.</b><br>
             Titular: <b>{{ $certificados->nombre_comerciante}}.</b><br> 
-            Domicilio: <b>{{ $certificados->direccion}}.</b><br> 
             Comercio: <b>{{ $certificados->nombre_comercio}}.</b><br> 
-            Presentó todas las Documentaciones referidas al Sistema de Protección contra Incendios, acorde al proyecto presentado oportunamente.-<br> 
+            Rubro: <b>{{ $certificados->rubro}}.</b><br>
+            Domicilio: <b>{{ $certificados->direccion}}.</b><br>  
+            PRESENTÓ TODAS LAS DOCUMENTACIONES REFERIDAS AL SISTEMA DE PROTECCIÓN CONTRA INCENDIOS, ACORDE AL PROYECTO PRESENTADO OPORTÚNAMENTE.<br> 
             Observaciones: <b>{{ $certificados->observaciones}}.</b> | Nro Certificado: <b>{{ $certificados->nro_certificado}}</b><br> 
             Nro Previa: <b>{{ $certificados->previa}}</b><br> 
             Valido Desde: <b>{{date('d/m/y', strtotime($certificados->desde))}}</b> Hasta: <b>{{date('d/m/y', strtotime($certificados->hasta))}}</b>
@@ -74,11 +74,11 @@
         </tbody>
       </table>
             <b>EL FUNCIONARIO DE POLICIA QUE SUSCRIBE CERTIFICA QUE: EL USO / LOCAL</b><br>
-            Rubro: <b>{{ $certificados->rubro}}.</b><br>
             Titular: <b>{{ $certificados->nombre_comerciante}}.</b><br> 
-            Domicilio: <b>{{ $certificados->direccion}}.</b><br> 
             Comercio: <b>{{ $certificados->nombre_comercio}}.</b><br> 
-            Presentó todas las Documentaciones referidas al Sistema de Protección contra Incendios, acorde al proyecto presentado oportunamente.-<br> 
+            Rubro: <b>{{ $certificados->rubro}}.</b><br>
+            Domicilio: <b>{{ $certificados->direccion}}.</b><br> 
+            PRESENTÓ TODAS LAS DOCUMENTACIONES REFERIDAS AL SISTEMA DE PROTECCIÓN CONTRA INCENDIOS, ACORDE AL PROYECTO PRESENTADO OPORTÚNAMENTE.<br> 
             Observaciones: <b>{{ $certificados->observaciones}}.</b> | Nro Certificado: <b>{{ $certificados->nro_certificado}}</b><br> 
             Nro Previa: <b>{{ $certificados->previa}}</b><br> 
             Valido Desde: <b>{{date('d/m/y', strtotime($certificados->desde))}}</b> Hasta: <b>{{date('d/m/y', strtotime($certificados->hasta))}}</b>

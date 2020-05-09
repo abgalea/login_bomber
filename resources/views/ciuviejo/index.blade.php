@@ -2,17 +2,23 @@
 
 @section('content')
 
-{{-- <div class="container"> --}}
-    <h2>Lista de Certificados - CIU Viejos <a href="certificados/create"><button type="button" class="btn btn-success float-right">Agregar Certificados</button></a></h2>
+<div class="container-fluid">
+  <div class="row"> 
+    <div class="col-lg-12">
+      <div class="card">
+        <div class="card-body">
+    <h2>Lista de Certificados - CIU Viejos 
+      {{-- <a href="certificados/create"><button type="button" class="btn btn-success float-right">Agregar Certificados</button></a> --}}
+    </h2>
     <table class="table table-bordered table-hover">
         <thead>
             <tr>
             <th scope="col">CIU</th>
             <th scope="col">Info Certificado</th>
             <th scope="col">Fecha Válida</th>
-            <th scope="col">Titular</th>
-            <th scope="col">Rubro</th>
             <th scope="col">Comercio</th>
+            <th scope="col">Rubro</th>
+            {{-- <th scope="col">Comercio</th> --}}
             <th scope="col">Previa</th>
             <th scope="col">Lugar Emisión</th>
             <th scope="col">Opciones</th>
@@ -29,9 +35,10 @@
             </td>
             <td>DESDE: <b>{{$certificado->desde}}</b> <br> 
                HASTA: <b>{{$certificado->hasta}} </b></td>
-            <td>{{$certificado->nombre}}</td>
+            <td>Comercio: <b>{{$certificado->comercio}}</b><br>
+              Titular: <b>{{$certificado->nombre}}</b></td>
             <td>{{$certificado->actividad}}</td>
-            <td>{{$certificado->comercio}}</td>
+            {{-- <td>{{$certificado->comercio}}</td> --}}
             <td>
               {{$certificado->previa}}
             </td>
@@ -49,5 +56,9 @@
           {{ $certificados->links() }}
         </div>
       </div>
-{{-- </div>     --}}
+    </div>
+  </div>
+  </div>
+  </div>
+  </div>
 @endsection

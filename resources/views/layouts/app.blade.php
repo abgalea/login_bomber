@@ -225,9 +225,9 @@
                             <li class="nav-item">
                                 <a href="{{ url('certificados/create')}}"
                                     class="{{ Request::path() === 'usuarios' ? 'nav-link ' : 'nav-link' }}">
-                                    <i class="fas fa-folder-plus"></i>
+                                    <i class="fas fa-plus-square"></i>
                                     <p>
-                                        Generar Certificado
+                                        Nuevo Certificado
                                         <span class="right badge badge-danger"></span>
                                     </p>
                                 </a>
@@ -237,7 +237,7 @@
                             <li class="nav-item">
                                 <a href="{{ url('certificados')}}"
                                     class="{{ Request::path() === 'usuarios' ? 'nav-link ' : 'nav-link' }}">
-                                    <i class="far fa-file"></i>
+                                    <i class="far fa-list-alt"></i>
                                     <p>
                                         Lista de Certificados                                        
                                         <span class="right badge badge-danger"></span>

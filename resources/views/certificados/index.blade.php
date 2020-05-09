@@ -19,7 +19,8 @@
             <th scope="col">Comercio</th>
             <th scope="col">Observacion</th>
             <th scope="col">Lugar Emisión</th>
-            <th scope="col">Opciones</th>
+            <th scope="col">Ver</th>
+            <th scope="col">Borrar</th>
             </tr>
         </thead>
         <tbody>
@@ -44,16 +45,17 @@
               Localidad: <b>{{$certificado->localidad}}</b><br>
               Dpencia: <b>{{$certificado->dependencia}}</b>
             </td>
+            <td><a href="{{ route('certificados.show', $certificado->id) }}"><button type="button" class="btn btn-success"><i class="fas fa-print"></i></button></a></td>
             <td>
                 
                 <form action="{{ route('certificados.destroy', $certificado->id) }}" method="POST">
-                  <a href="{{ route('certificados.show', $certificado->id) }}"><button type="button" class="btn btn-secondary">CIU</button></a>
+                  
                   {{-- <a href="{{ route('certificados.edit', $certificado->id) }}"><button type="button" class="btn btn-info">Editar</button></a> --}}
                   @method('DELETE')
                   @csrf
-                  <button type="submit" class="btn btn-danger">Borrar</button>
+                  <button type="submit" class="btn btn-danger"><i class="fas fa-plus-square"></i></button>
                 </form>
-                </td>
+            </td>
             </tr>
             @endforeach
         </tbody>
