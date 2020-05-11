@@ -45,7 +45,7 @@
               <br>
               <br>
               <br>
-            <a href="/imprimir/{{$certificados->id}}"><button type="button" class="btn btn-primary btn-lg"> <i class="fas fa-file-download"></i> DESCARGAR CIU</button></a>
+            <a href="/imprimir/{{$certificados->id}}"><button type="button" class="btn btn-primary btn-lg"> <i class="fas fa-file-pdf"></i> DESCARGAR PDF</button></a>
             <a target="_blank" href="/ver/{{$certificados->id}}"><button type="button" class="btn btn-success btn-lg"> <i class="fas fa-eye"></i> VER CIU</button></a>
             </p>
           {{-- <br><p></p><hr style='border:dashed #000 1px'> --}}
