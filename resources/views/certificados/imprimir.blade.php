@@ -36,8 +36,8 @@
                       </tr>
                     </tbody>
                   </table>
-                        <h3>EL FUNCIONARIO DE POLICIA QUE SUSCRIBE CERTIFICA QUE: EL USO / LOCAL</h3>
-                        {{-- <div class="rounded float-right">{!!QrCode::size(200)->generate("https://policiamisiones.gob.ar/CIU/index.php?id={{$certificados->id}}") !!}</div> --}}
+                        <h3>EL FUNCIONARIO DE POLICIA QUE SUSCRIBE CERTIFICA QUE: EL USO / LOCAL<br>
+                        CIU NRO: {{ $certificados->id}}</h3>
                         Titular: <b>{{ $certificados->nombre_comerciante}}.</b><br> 
                         Comercio: <b>{{ $certificados->nombre_comercio}}.</b><br> 
                         Rubro: <b>{{ $certificados->rubro}}.</b><br>
@@ -76,6 +76,7 @@
                         </tbody>
                       </table>
                         <b>EL FUNCIONARIO DE POLICIA QUE SUSCRIBE CERTIFICA QUE: EL USO / LOCAL</b><br>
+                        CIU NRO: <b>{{ $certificados->id}}</b><br>
                         Titular: <b>{{ $certificados->nombre_comerciante}}.</b><br> 
                         Comercio: <b>{{ $certificados->nombre_comercio}}.</b><br> 
                         Rubro: <b>{{ $certificados->rubro}}.</b><br>
@@ -114,6 +115,7 @@
                         </tbody>
                       </table>
                         <b>EL FUNCIONARIO DE POLICIA QUE SUSCRIBE CERTIFICA QUE: EL USO / LOCAL</b><br>
+                          CIU NRO: <b>{{ $certificados->id}}</b><br>
                         Titular: <b>{{ $certificados->nombre_comerciante}}.</b><br> 
                         Comercio: <b>{{ $certificados->nombre_comercio}}.</b><br> 
                         Rubro: <b>{{ $certificados->rubro}}.</b><br>
