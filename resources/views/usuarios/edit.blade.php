@@ -30,7 +30,7 @@
                   <input type="email" class="form-control" name="email" value="{{$user->email}}" aria-describedby="emailHelp">
                 </div>
                 <button type="submit" class="btn btn-primary">Actualizar</button>
-                <button type="reset" class="btn btn-danger">Cancelar</button>
+                {{-- <button type="reset" class="btn btn-danger">Cancelar</button> --}}
               </form>
         </div>
     </div>
