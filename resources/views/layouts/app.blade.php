@@ -216,6 +216,17 @@
                                     </p>
                                 </a>
                             </li>
+
+                            <li class="nav-item">
+                                <a href="{{ url('register')}}"
+                                    class="{{ Request::path() === '/usuarios' ? 'nav-link' : 'nav-link' }}">
+                                    <i class="fas fa-user-plus"></i>
+                                    <p>
+                                        Nuevo Usuario                                       
+                                        <span class="right badge badge-danger"></span>
+                                    </p>
+                                </a>
+                            </li>
                             <?php } ?>
 
                             <li class="nav-item">
