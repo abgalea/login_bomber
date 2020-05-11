@@ -6,10 +6,11 @@
   <div class="row"> 
     <div class="col-lg-12">
       <div class="card">
+        <div class="card-header bg-gradient-lightblue">
+          <h3 class="card-title">Lista de Usuarios</h3>
+        </div>
         <div class="card-body">
-          <h2>Lista de Usuarios 
-            {{-- <a href="usuarios/create"><button type="button" class="btn btn-success float-right">Agregar usuario</button></a> --}}
-          </h2>
+         
           <h6>
             @if ($search)
             <div class="alert alert-primary" role="alert">

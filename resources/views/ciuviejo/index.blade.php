@@ -6,10 +6,11 @@
   <div class="row"> 
     <div class="col-lg-12">
       <div class="card">
+        <div class="card-header bg-gradient-olive">
+          <h3 class="card-title">Lista de Certificados - CIU Viejos</h3>
+        </div>
         <div class="card-body">
-    <h2>Lista de Certificados - CIU Viejos 
-      {{-- <a href="certificados/create"><button type="button" class="btn btn-success float-right">Agregar Certificados</button></a> --}}
-    </h2>
+    
     <table class="table table-bordered table-hover">
         <thead>
             <tr>

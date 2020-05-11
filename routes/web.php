@@ -8,6 +8,8 @@ Route::get('/', 'HomeController@index')->name('home');
 Route::resource('usuarios', 'UserController')->middleware('auth');
 Route::resource('certificados','CertificadoController')->middleware('auth');
 Route::resource('ciuviejo','CiuviejosController')->middleware('auth');
+Route::name('print')->get('/imprimir/{id}', 'GeneradorController@imprimir');
+Route::name('ver')->get('/ver/{id}', 'CertificadoController@ver');
 
 
 

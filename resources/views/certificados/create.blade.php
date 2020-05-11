@@ -6,8 +6,8 @@
     <!-- left column -->
     <div class="col-md-6">
       <!-- general form elements -->
-      <div class="card card-primary">
-        <div class="card-header">
+      <div class="card">
+        <div class="card-header bg-gradient-danger">
           <h3 class="card-title">Nuevo Certificado</h3>
         </div>
             <form action="/certificados" method="POST">

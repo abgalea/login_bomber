@@ -40,11 +40,9 @@
               <br>
               <br>
               <br>
-            <a href="/imprimir/{{$certificados->id}}"><button type="button" class="btn btn-primary btn-lg"> <i class="fas fa-file-download"></i> DESCARGAR CIU</button></a>
-            <a target="_blank" href="/ver/{{$certificados->id}}"><button type="button" class="btn btn-primary btn-lg"> <i class="fas fa-eye"></i> VER CIU</button></a>
             </p>
-          {{-- <br><p></p><hr style='border:dashed #000 1px'> --}}
-        {{-- <table width='100%'><tbody>
+          <br><p></p><hr style='border:dashed #000 1px'>
+        <table width='100%'><tbody>
           <tr>
             <td><img src='/img/logo_bom.jpg' width='40' /></td>
             <td><h3>Certificado de Identificacion Unica (CIU)N°: {{ $certificados->id}} - DUPLICADO</h3></td>
@@ -87,7 +85,7 @@
             Valido Desde: <b>{{date('d/m/y', strtotime($certificados->desde))}}</b> Hasta: <b>{{date('d/m/y', strtotime($certificados->hasta))}}</b>
             <p>Emitido: <b>{{date('d/m/y', strtotime($certificados->fecha))}}</b> <br> <b>Puede Validar los Datos del Presente 
               Certificado en la Siguiente URL - <a href="https://policiamisiones.gob.ar/CIU/index.php?id={{$certificados->id}}">https://policiamisiones.gob.ar/CIU/</a></b>
-            <br><br><br><br><br></p> --}}
+            <br><br><br><br><br></p>
             
     </div>
   </div>

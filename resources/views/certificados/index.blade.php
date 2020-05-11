@@ -6,8 +6,11 @@
   <div class="row"> 
     <div class="col-lg-12">
       <div class="card">
+        <div class="card-header bg-gradient-lightblue">
+          <h3 class="card-title">Lista de Certificados - CIU (<b>Código de Identificación Único</b>)</h3>
+        </div>
         <div class="card-body">
-    <h2>Lista de Certificados - CIU (Cada certificado tiene un <b>Código de Identificación Único</b>) <!--<a href="certificados/create"><button type="button" class="btn btn-success float-right">Agregar Certificados</button></a>--></h2>
+    <h2> <!--<a href="certificados/create"><button type="button" class="btn btn-success float-right">Agregar Certificados</button></a>--></h2>
     <table class="table table-bordered table-hover">
         <thead>
             <tr>
@@ -27,7 +30,7 @@
             @foreach ($certificados as $certificado)
 
             <tr>
-            <th scope="row">CIU{{$certificado->id}}</th>
+            <th scope="row">CIU-{{$certificado->id}}</th>
             <td>
               Nro: <b>{{$certificado->nro_certificado}}</b><br>
               Emitido: <b>{{date('d/m/y', strtotime($certificado->fecha))}}</b>

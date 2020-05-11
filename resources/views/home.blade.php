@@ -27,7 +27,7 @@
 
     <div class="container-fluid">
         <div class="card">
-            <h5 class="card-header"> Dirección Bomberos de la Policía de Misiones</h5>
+            <h5 class="card-header bg-danger"> Dirección Bomberos de la Policía de Misiones</h5>
             <div class="card-body">
                 <img src="{{  $obj[0]["foto"] }}" class="rounded float-right" alt="User Image">
                 Jerarquía: <b>{{ $obj[0]["jerarquia"] }}</b><br>

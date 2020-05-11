@@ -96,6 +96,11 @@ class CertificadoController extends Controller
         return view('certificados.show', ['certificados'=>Certificados::findOrFail($id)]);
     }
 
+    public function ver($id)
+    {
+        return view('certificados.ver', ['certificados'=>Certificados::findOrFail($id)]);
+    }
+
     public function edit($id)
     {
         return view('certificados.edit', ['certificados'=>Certificados::findOrFail($id)]);
