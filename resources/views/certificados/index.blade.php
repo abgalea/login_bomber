@@ -22,8 +22,8 @@
             <th scope="col">Comercio</th>
             <th scope="col">Observacion</th>
             <th scope="col">Lugar Emisión</th>
-            <th scope="col">Ver</th>
-            <th scope="col">Borrar</th>
+            <th scope="col">Opciones</th>
+            {{-- <th scope="col">Borrar</th> --}}
             </tr>
         </thead>
         <tbody>
@@ -48,15 +48,15 @@
               Localidad: <b>{{$certificado->localidad}}</b><br>
               Dpencia: <b>{{$certificado->dependencia}}</b>
             </td>
-            <td><a href="{{ route('certificados.show', $certificado->id) }}"><button type="button" class="btn btn-success"><i class="fas fa-print"></i></button></a></td>
+            {{--  <td></td> --}}
             <td>
                 
-                <form action="{{ route('certificados.destroy', $certificado->id) }}" method="POST">
-                  
-                  {{-- <a href="{{ route('certificados.edit', $certificado->id) }}"><button type="button" class="btn btn-info">Editar</button></a> --}}
+                <form action="{{ route('certificados.destroy', $certificado->id) }}" method="POST" class="form-inline">
+                  <a href="/imprimir/{{$certificado->id}}"><button type="button" class="btn btn-danger"><i class="fas fa-file-pdf"></i></button></a>
+                  <a href="{{ route('certificados.show', $certificado->id) }}"><button type="button" class="btn btn-success"><i class="fas fa-print"></i></button></a>
                   @method('DELETE')
                   @csrf
-                  <button type="submit" class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
+                  <button type="submit" class="btn btn-warning"><i class="far fa-trash-alt"></i></button>
                 </form>
             </td>
             </tr>

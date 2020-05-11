@@ -29,6 +29,7 @@
         <div class="card">
             <h5 class="card-header bg-danger"> Dirección Bomberos de la Policía de Misiones</h5>
             <div class="card-body">
+                <h3>Datos de Usuario</h3>
                 <img src="{{  $obj[0]["foto"] }}" class="rounded float-right" alt="User Image">
                 Jerarquía: <b>{{ $obj[0]["jerarquia"] }}</b><br>
                 Nombre: <b>{{ $obj[0]["apellido"] }} {{ $obj[0]["nombres"] }}</b><br>

@@ -17,6 +17,11 @@
               Los resultado de tu busqueda '{{ $search }}' son:
             </div>
             @endif
+            @if (session('status'))
+              <div class="alert alert-info">
+                  {{ session('status') }}
+              </div>
+            @endif
           </h6>
           <table class="table table-hover">
               <thead>

@@ -4,7 +4,7 @@
 <div class="container-fluid">
   <div class="row">
     <!-- left column -->
-    <div class="col-md-6">
+    <div class="col-md-9">
       <!-- general form elements -->
       <div class="card">
         <div class="card-header bg-gradient-danger">
@@ -14,74 +14,74 @@
               <div class="card-body">
                 @csrf
                 <div class="form-group row">
-                    <label class="col-sm-2 col-form-label">Orden</label>
-                    <div class="col-sm-10">
+                    <label class="col-sm-4 col-form-label">Orden</label>
+                    <div class="col-sm-8">
                     <input required type="text" class="form-control" name="orden" aria-describedby="emailHelp">
                     </div>
                 </div>
                 <div class="form-group row">
-                  <label class="col-sm-2 col-form-label">Nro Certificado</label>
-                  <div class="col-sm-10">
+                  <label class="col-sm-4 col-form-label">Nro Certificado</label>
+                  <div class="col-sm-8">
                   <input required type="text" class="form-control" placeholder="Nro del Certificado" name="nro_certificado" aria-describedby="emailHelp">
                   </div>
                 </div>
                 <div class="form-group row">
-                  <label class="col-sm-2 col-form-label">Fecha de Emisión</label>
-                  <div class="col-sm-10">
+                  <label class="col-sm-4 col-form-label">Fecha de Emisión</label>
+                  <div class="col-sm-8">
                   <input required type="date" class="form-control" name="fecha" value="<?php echo  date('Y-m-d') ?>" aria-describedby="emailHelp">
                   </div>
                 </div>
                 <div class="form-group row">
-                  <label class="col-sm-2 col-form-label">Válido desde</label>
-                  <div class="col-sm-10">
+                  <label class="col-sm-4 col-form-label">Válido desde</label>
+                  <div class="col-sm-8">
                   <input required type="date" class="form-control" name="desde" value="<?php echo  date('Y-m-d') ?>" aria-describedby="emailHelp">
                   </div>
                 </div>
                 <div class="form-group row">
-                    <label class="col-sm-2 col-form-label">Válido Hasta</label>
-                    <div class="col-sm-10">
+                    <label class="col-sm-4 col-form-label">Válido Hasta</label>
+                    <div class="col-sm-8">
                     <input required type="date" class="form-control" name="hasta" value="<?php echo  date('Y-m-d', strtotime('+1 year')); ?>" aria-describedby="emailHelp">
                     </div>
                 </div>
                 <div class="form-group row">
-                  <label class="col-sm-2 col-form-label">Nombre Titular</label>
-                  <div class="col-sm-10">
+                  <label class="col-sm-4 col-form-label">Nombre Titular</label>
+                  <div class="col-sm-8">
                   <input required type="text" class="form-control" name="nombre_comerciante" placeholder="Titular del Comercio" aria-describedby="emailHelp">
                   </div>
                 </div>
                 <div class="form-group row">
-                  <label class="col-sm-2 col-form-label">Nombre del Comercio</label>
-                  <div class="col-sm-10">
+                  <label class="col-sm-4 col-form-label">Nombre del Comercio</label>
+                  <div class="col-sm-8">
                   <input required type="text" class="form-control" name="nombre_comercio" placeholder="Nombre del Comercio" aria-describedby="emailHelp">
                   </div>
                 </div>
                 <div class="form-group row">
-                    <label class="col-sm-2 col-form-label">Rubro</label>
-                    <div class="col-sm-10">
+                    <label class="col-sm-4 col-form-label">Rubro</label>
+                    <div class="col-sm-8">
                     <input required type="text" class="form-control" name="rubro" placeholder="Rubro Comercial o Actividad" aria-describedby="emailHelp">
                     </div>
                 </div>
                 <div class="form-group row">
-                  <label class="col-sm-2 col-form-label">Dirección</label>
-                  <div class="col-sm-10">
+                  <label class="col-sm-4 col-form-label">Dirección</label>
+                  <div class="col-sm-8">
                   <input required type="text" class="form-control" name="direccion" placeholder="Dirección del Comercio" aria-describedby="emailHelp">
                   </div>
                 </div>
                 <div class="form-group row">
-                  <label class="col-sm-2 col-form-label">Detalle - Observaciones</label>
-                  <div class="col-sm-10">
+                  <label class="col-sm-4 col-form-label">Detalle - Observaciones</label>
+                  <div class="col-sm-8">
                   <input required type="text" class="form-control" name="observaciones" placeholder="Algun detalle para aclarar" aria-describedby="emailHelp">
                   </div>
                 </div>
                 <div class="form-group row">
-                  <label class="col-sm-2 col-form-label">Previa</label>
-                  <div class="col-sm-10">
+                  <label class="col-sm-4 col-form-label">Previa</label>
+                  <div class="col-sm-8">
                   <input required type="text" class="form-control" name="previa" value="0" aria-describedby="emailHelp">
                   </div>
                 </div>
                 <div class="form-group row">
-                  <label class="col-sm-2 col-form-label">Localidad</label>
-                  <div class="col-sm-10">
+                  <label class="col-sm-4 col-form-label">Localidad</label>
+                  <div class="col-sm-8">
                   <select required class="form-control" name="localidad" >
                     <option selected disabled>SELECCIONAR UNA OPCIÓN</option>
                     <option value='25 de Mayo'>25 de Mayo</option>
@@ -164,8 +164,8 @@
                   </div>
                 </div>
                 <div class="form-group row">
-                  <label class="col-sm-2 col-form-label">Usuario</label>
-                  <div class="col-sm-10">
+                  <label class="col-sm-4 col-form-label">Usuario</label>
+                  <div class="col-sm-8">
                     <input type="text" value="{{ auth()->user()->name }}" class="form-control" disabled>
                   
                     <input type="hidden" class="form-control" value="{{ auth()->user()->username }}" name="usuario">

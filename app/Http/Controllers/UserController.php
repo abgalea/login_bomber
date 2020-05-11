@@ -12,6 +12,7 @@ class UserController extends Controller
     public function index(Request $request)
     {
         $query = trim($request->get('search'));
+        
 
         if ($request){
             $users = User::where('name', 'LIKE', '%'.$query.'%')
@@ -71,8 +72,15 @@ class UserController extends Controller
     public function destroy($id)
     {
         $usuarios = User::findOrFail($id);
-        $usuarios->delete();
+        $nivel = ($usuarios->nivel);
 
-        return redirect('/usuarios');
+        if($nivel != 'admin'){
+            $usuarios->delete();
+            $mensaje = 'Se borró un usuario';
+            return redirect('usuarios')->with('status', 'Se borró el usuario');
+        }else{
+            $mensaje = 'No se puede borrar un Administrador';
+            return redirect('usuarios')->with('status', 'No se puede borrar un Administrador!');
+        }
     }
 }
