@@ -57,7 +57,6 @@
                           <br>
                           <br>
                           <br>
-                          <br>
                         <p></p>
                       <hr style='border:dashed #000 1px'>
                       <table width='100%'>
@@ -87,7 +86,6 @@
                         Valido Desde: <b>{{date('d/m/y', strtotime($certificados->desde))}}</b> Hasta: <b>{{date('d/m/y', strtotime($certificados->hasta))}}</b>
                         <br>Emitido: <b>{{date('d/m/y', strtotime($certificados->fecha))}}</b> <br> <b>Puede Validar los Datos del Presente 
                             Certificado en la Siguiente URL - <a href="https://policiamisiones.gob.ar/bomberos/index.php?id={{$certificados->id}}">https://policiamisiones.gob.ar/bomberos/</a></b>
-                          <br>
                           <br>
                           <br>
                           <br>
