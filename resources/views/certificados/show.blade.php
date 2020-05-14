@@ -39,7 +39,7 @@
             Nro Previa: <b>{{ $certificados->previa}}</b><br> 
             Valido Desde: <b>{{date('d/m/y', strtotime($certificados->desde))}}</b> Hasta: <b>{{date('d/m/y', strtotime($certificados->hasta))}}</b>
             <p>Emitido: <b>{{date('d/m/y', strtotime($certificados->fecha))}}</b> <br> <b>Puede Validar los Datos del Presente 
-              Certificado en la Siguiente URL - <a href="https://policiamisiones.gob.ar/bomberos/index.php?id={{$certificados->id}}">https://policiamisiones.gob.ar/CIU/</a></b>
+              Certificado en la Siguiente URL - <a href="https://policiamisiones.gob.ar/bomberos/index.php?id={{$certificados->id}}">https://policiamisiones.gob.ar/bomberos/</a></b>
               <br>
               <br>
               <br>

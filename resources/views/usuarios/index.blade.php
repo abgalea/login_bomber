@@ -30,16 +30,18 @@
                   <th scope="col">Nombre</th>
                   <th scope="col">Correo</th>
                   <th scope="col">Revista</th>
+                  <th scope="col">Rol</th>
                   <th scope="col">Opcion</th>
                 </tr>
               </thead>
               <tbody>
                 @foreach ($users as $user)
                 <tr>
-                  <th scope="row">{{$user->id}}</th>
+                  <th>{{$user->id}}</th>
                   <td>{{$user->name}}</td>
                   <td>{{$user->email}}</td>
                   <td>{{$user->revista}}</td>
+                  <td>{{$user->nivel}}</td>
                   <td>
                   
                   <form action="{{ route('usuarios.destroy', $user->id) }}" method="POST">

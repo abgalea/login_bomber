@@ -25,7 +25,8 @@
     <!-- Styles -->
     <link href="{{ asset('dist/css/adminlte.min.css') }}" rel="stylesheet">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-<link rel="icon" href="{{ asset('img/logo_bom.png')}}" sizes="32x32" />
+    <link rel="icon" href="{{ asset('img/logo_bom.png')}}" sizes="32x32" />
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('img/favicon.ico')}}">
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -330,9 +331,9 @@
             <!-- /.content-wrapper -->
             <footer class="main-footer">
                 <!-- NO QUITAR -->
-                <strong>Policía de Misiones - Sistema de Certificados de Identificación Única de Bomberos (CIUB) <img class="rounded" width="20px" src="/img/logo_bom.jpg" alt="Card image cap">
+                <strong>Desarrollado por la <b>Dir. Innovación Desarrollo Tecnológico y Robótica</b> para la Dir. Bomberos de la Policía de Misiones
                     <div class="float-right d-none d-sm-inline-block">
-                        <b>Version</b> 1.0
+                        <b>Version</b> 2.0
                     </div>
             </footer>
 
@@ -343,6 +344,9 @@
             <!-- /.control-sidebar -->
         </div>
     </div>
-</body>
+<!-- jQuery -->
+<script src="{{ asset('plugins/jquery/jquery.min.js')}}"></script>
 
+
+</body>
 </html>

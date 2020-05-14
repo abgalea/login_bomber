@@ -10,27 +10,89 @@
                             $obj = json_decode($json, true);
                             // echo $obj[0]["jerarquia"];
                         @endphp
-    {{-- <div class="card">
-        <div class="card-header">
-            <img class="rounded float-left" src="/img/logo_bom.jpg" alt="Card image cap"> DIRECCIÓN DE BOMBEROS
-        </div>  
-        
-        <div class="card-body">
-            
-            <img src="{{  $obj[0]["foto"] }}" class="mx-auto d-block img-circle elevation-2" alt="User Image">
-            <h3>Personal Policial: {{ $obj[0]["jerarquia"] }} {{ $obj[0]["apellido"] }} {{ $obj[0]["nombres"] }}</h3>
-        </div>
-        <div class="card-footer">
-            Policía de la Provincia de Misiones - Ministerio de Gobierno
-        </div>
-    </div> --}}
 
     <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-3 col-6">
+              <!-- small box -->
+              <div class="small-box bg-info">
+                <div class="inner">
+                  <h3>{{ $total_apostoles }}</h3>
+  
+                  <p>Certificados en Apóstoles</p>
+                </div>
+                <div class="icon">
+                  <i class="ion ion-bag"></i>
+                </div>
+                <a href="{{ url('certificados?localidad=Apostoles')}}" class="small-box-footer">Más Info <i class="fas fa-arrow-circle-right"></i></a>
+              </div>
+            </div>
+            <!-- ./col -->
+            <div class="col-lg-3 col-6">
+              <!-- small box -->
+              <div class="small-box bg-success">
+                <div class="inner">
+                  <h3>{{ $total_obera}}</h3>
+  
+                  <p>Certificados en Oberá</p>
+                </div>
+                <div class="icon">
+                  <i class="ion ion-stats-bars"></i>
+                </div>
+                <a href="{{ url('certificados?localidad=Obera')}}" class="small-box-footer">Más info <i class="fas fa-arrow-circle-right"></i></a>
+              </div>
+            </div>
+            <!-- ./col -->
+            <div class="col-lg-3 col-6">
+              <!-- small box -->
+              <div class="small-box bg-primary">
+                <div class="inner">
+                  <h3>{{ $total_posadas}}</h3>
+  
+                  <p>Certificados en Posadas</p>
+                </div>
+                <div class="icon">
+                  <i class="ion ion-person-add"></i>
+                </div>
+                <a href="{{ url('certificados?localidad=Posadas')}}" class="small-box-footer">Más info <i class="fas fa-arrow-circle-right"></i></a>
+              </div>
+            </div>
+            <!-- ./col -->
+            <div class="col-lg-3 col-6">
+              <!-- small box -->
+              <div class="small-box bg-warning">
+                <div class="inner">
+                <h3>{{ $total_apostoles }}</h3>
+  
+                  <p>Certificados en Garupá</p>
+                </div>
+                <div class="icon">
+                  <i class="ion ion-pie-graph"></i>
+                </div>
+                <a href="{{ url('certificados?localidad=Garupa')}}" class="small-box-footer">Más info <i class="fas fa-arrow-circle-right"></i></a>
+              </div>
+            </div>
+            <!-- ./col -->
+            <div class="col-lg-12 col-12">
+                <!-- small box -->
+                <div class="small-box bg-danger">
+                  <div class="inner">
+                    <h3>{{ $total_vencer}}</h3>
+    
+                    <p>Certificados por Vencer</p>
+                  </div>
+                  <div class="icon">
+                    <i class="ion ion-pie-graph"></i>
+                  </div>
+                  <a href="{{ url('certificados?porVencer=1')}}" class="small-box-footer">Más info <i class="fas fa-arrow-circle-right"></i></a>
+                </div>
+              </div>
+          </div>
         <div class="card">
-            <h5 class="card-header bg-danger"> Dirección Bomberos de la Policía de Misiones</h5>
+            <h5 class="card-header bg-blue"> Dirección Bomberos de la Policía de Misiones</h5>
             <div class="card-body">
                 <h3>Datos de Usuario</h3>
-                <img src="{{  $obj[0]["foto"] }}" class="rounded float-right" alt="User Image">
+                <img src="{{  $obj[0]["foto"] }}" class="img-fluid rounded float-right" alt="User Image">
                 Jerarquía: <b>{{ $obj[0]["jerarquia"] }}</b><br>
                 Nombre: <b>{{ $obj[0]["apellido"] }} {{ $obj[0]["nombres"] }}</b><br>
                 Dependencia: {{ $obj[0]["dependencia"] }}<br>

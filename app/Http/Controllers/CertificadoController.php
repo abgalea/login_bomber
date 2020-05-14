@@ -11,6 +11,9 @@ class CertificadoController extends Controller
     public function index(Request $request)
     {
         $query = trim($request->get('search'));
+        $localidad = trim($request->get('localidad'));
+        $porVencer = trim($request->get('porVencer'));
+        
         
         if (Auth::user()->nivel == 'cargador'){
             $certificados = Certificados::where('usuario', '=', Auth::user()->username)
@@ -28,18 +31,34 @@ class CertificadoController extends Controller
         }
 
         if (Auth::user()->nivel == 'admin'){
-            $certificados = Certificados::where('localidad', 'LIKE', Auth::user()->localidad)
-             ->orWhere('nro_certificado','LIKE',"%$query%")
-             ->orWhere('nombre_comerciante','LIKE',"%$query%")
-             ->orWhere('nombre_comercio','LIKE',"%$query%")
-             ->orWhere('observaciones','LIKE',"%$query%")
-             ->orWhere('localidad','LIKE',"%$query%")
-             ->orWhere('dependencia','LIKE',"%$query%")
-             ->orWhere('usuario','LIKE',"%$query%")
-             ->orderBy('id', 'desc')
-             ->paginate(5);
-             return view('certificados.index', ['certificados' => $certificados, 'search' => $query]);
+            if ($localidad != ''){
+                $certificados = Certificados::where('localidad', 'LIKE', "%$localidad%")
+                ->orderBy('id', 'desc')
+                ->paginate(5);
+            }else{
+                $certificados = Certificados::where('localidad', 'LIKE', "%$localidad%")
+                ->orWhere('nro_certificado','LIKE',"%$query%")
+                ->orWhere('nombre_comerciante','LIKE',"%$query%")
+                ->orWhere('nombre_comercio','LIKE',"%$query%")
+                ->orWhere('observaciones','LIKE',"%$query%")
+                ->orWhere('localidad','LIKE',"%$query%")
+                ->orWhere('dependencia','LIKE',"%$query%")
+                ->orWhere('usuario','LIKE',"%$query%")
+                ->orderBy('id', 'desc')
+                ->paginate(5);
+            }
+            if($porVencer == '1'){
+                $desdevencimiento = date('Y-m-d');
+                $hastavencimiento = date( "Y-m-d", strtotime( "$desdevencimiento + 7 day"));
+                $certificados = Certificados::whereBetween('hasta', [$desdevencimiento, $hastavencimiento])
+                ->orderBy('id', 'desc')
+                ->paginate(5);
+            }
+             $nivel = Auth::user()->nivel;
+             return view('certificados.index', ['certificados' => $certificados, 'search' => $query, 'nivel' => $nivel, 'localidad' => $localidad]);
         }
+
+        
         
         // if ($request){
         //     $certificados = Certificados::where('usuario', '=', Auth::user()->username)
