@@ -49,6 +49,20 @@
                   <input required type="text" class="form-control" name="nombre_comerciante" placeholder="Titular del Comercio" aria-describedby="emailHelp">
                   </div>
                 </div>
+                <hr>
+                <div class="form-group row">
+                  <label class="col-sm-4 col-form-label bg-gradient-danger">Teléfono Contacto</label>
+                  <div class="col-sm-8">
+                  <input required type="text" class="form-control" name="telefono_contacto" placeholder="Nro de Teléfono celular" aria-describedby="emailHelp">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-sm-4 col-form-label bg-gradient-danger">Correo Electrónico</label>
+                  <div class="col-sm-8">
+                  <input required type="text" class="form-control" name="correo_contacto" placeholder="Correo Electrónico para contacto" aria-describedby="emailHelp">
+                  </div>
+                </div>
+                <hr>
                 <div class="form-group row">
                   <label class="col-sm-4 col-form-label">Nombre del Comercio</label>
                   <div class="col-sm-8">
@@ -83,7 +97,7 @@
                   <label class="col-sm-4 col-form-label">Localidad</label>
                   <div class="col-sm-8">
                   <select required class="form-control" name="localidad" >
-                    <option selected disabled>SELECCIONAR UNA OPCIÓN</option>
+                  <option selected value="{{Auth::user()->localidad}}" >Localidad: {{Auth::user()->localidad}}</option>
                     <option value='25 de Mayo'>25 de Mayo</option>
                     <option value='9 de Julio'>9 de Julio</option>
                     <option value='Alba Posse'>Alba Posse</option>

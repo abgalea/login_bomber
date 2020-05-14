@@ -21,6 +21,8 @@ class CreateCertificadosTable extends Migration
             $table->date('desde');
             $table->date('hasta');
             $table->string('nombre_comerciante');
+            $table->string('telefono_contacto');
+            $table->string('correo_contacto');
             $table->string('nombre_comercio');
             $table->string('rubro');
             $table->string('direccion');

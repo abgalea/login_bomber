@@ -95,6 +95,8 @@ class CertificadoController extends Controller
             $certificado->dependencia = $request->input('dependencia');
             $certificado->nombre_comerciante = $request->input('nombre_comerciante');
             $certificado->nombre_comercio = $request->input('nombre_comercio');
+            $certificado->telefono_contacto = $request->input('telefono_contacto');
+            $certificado->correo_contacto = $request->input('correo_contacto');
             $certificado->rubro = $request->input('rubro');
             $certificado->direccion = $request->input('direccion');
             $certificado->observaciones = $request->input('observaciones');
@@ -137,6 +139,8 @@ class CertificadoController extends Controller
         $certificado->localidad = $request->get('localidad');
         $certificado->dependencia = $request->get('dependencia');
         $certificado->nombre_comerciante = $request->get('nombre_comerciante');
+        $certificado->telefono_contacto = $request->get('telefono_contacto');
+        $certificado->correo_contacto = $request->get('correo_contacto');
         $certificado->nombre_comercio = $request->get('nombre_comercio');
         $certificado->rubro = $request->get('rubro');
         $certificado->direccion = $request->get('direccion');

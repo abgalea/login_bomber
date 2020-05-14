@@ -57,7 +57,9 @@
                HASTA: <b style="color: crimson">{{date('d/m/y', strtotime($certificado->hasta))}} </b></td>
             <td>Titular: <b>{{$certificado->nombre_comerciante}}</b><br>
             Comercio: <b>{{$certificado->nombre_comercio}}</b><br>
-            Rubro: {{$certificado->rubro}}
+            Rubro: <b>{{$certificado->rubro}}</b><br>
+            Tel: <b>{{$certificado->telefono_contacto}}</b><br>
+            Mail: <b><a href="mailto:{{$certificado->correo_contacto}}">{{$certificado->correo_contacto}}</a></b><br>
             </td>
             {{-- <td>{{$certificado->rubro}}</td>
             <td>{{$certificado->nombre_comercio}}</td> --}}
