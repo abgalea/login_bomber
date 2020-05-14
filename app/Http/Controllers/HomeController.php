@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Certificados;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -29,9 +30,6 @@ class HomeController extends Controller
 
         $desdevencimiento = date('Y-m-d');
         $hastavencimiento = date( "Y-m-d", strtotime( "$desdevencimiento + 7 day"));
-
-
-        $total_cert = Certificados::count();
         $total_posadas = Certificados::where('localidad','like','Posadas')
         ->whereBetween('fecha', [$desde, $hasta])
         ->count();
@@ -47,7 +45,28 @@ class HomeController extends Controller
         $total_vencer = Certificados::whereBetween('hasta', [$desdevencimiento, $hastavencimiento])
         // ->whereBetween('hasta', [$desdevencimiento, $hastavencimiento])
         ->count();
-        return view('home', ['total_cert' => $total_cert, 'total_posadas' => $total_posadas, 'total_garupa' => $total_garupa, 'total_obera' => $total_obera, 'total_apostoles' => $total_apostoles, 'total_vencer' => $total_vencer]);
+
+        if (Auth::user()->nivel == 'cargador'){
+            $total_cert = Certificados::where('usuario', '=', Auth::user()->username)
+            ->count();
+            return view('home', ['total_cert' => $total_cert, 'total_posadas' => $total_posadas, 'total_garupa' => $total_garupa, 'total_obera' => $total_obera, 'total_apostoles' => $total_apostoles, 'total_vencer' => $total_vencer]);
+        }
+        if (Auth::user()->nivel == 'supervisor'){
+             $total_cert = Certificados::where('usuario', '=', Auth::user()->username)
+            ->count();
+            return view('home', ['total_cert' => $total_cert, 'total_posadas' => $total_posadas, 'total_garupa' => $total_garupa, 'total_obera' => $total_obera, 'total_apostoles' => $total_apostoles, 'total_vencer' => $total_vencer]);
+
+        }
+        if (Auth::user()->nivel == 'admin'){
+            $total_cert = Certificados::where('usuario', '=', Auth::user()->username)
+            ->count();
+            $nivel = Auth::user()->nivel;
+            return view('home', ['nivel' => $nivel, 'total_cert' => $total_cert, 'total_posadas' => $total_posadas, 'total_garupa' => $total_garupa, 'total_obera' => $total_obera, 'total_apostoles' => $total_apostoles, 'total_vencer' => $total_vencer]);
+        }
+
+        
+        
+        
         
     }
 }

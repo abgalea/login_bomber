@@ -49,20 +49,6 @@
                   <input required type="text" class="form-control" name="nombre_comerciante" placeholder="Titular del Comercio" aria-describedby="emailHelp">
                   </div>
                 </div>
-                <hr>
-                <div class="form-group row">
-                  <label class="col-sm-4 col-form-label bg-gradient-danger">Teléfono Contacto</label>
-                  <div class="col-sm-8">
-                  <input required type="text" class="form-control" name="telefono_contacto" placeholder="Nro de Teléfono celular" aria-describedby="emailHelp">
-                  </div>
-                </div>
-                <div class="form-group row">
-                  <label class="col-sm-4 col-form-label bg-gradient-danger">Correo Electrónico</label>
-                  <div class="col-sm-8">
-                  <input required type="text" class="form-control" name="correo_contacto" placeholder="Correo Electrónico para contacto" aria-describedby="emailHelp">
-                  </div>
-                </div>
-                <hr>
                 <div class="form-group row">
                   <label class="col-sm-4 col-form-label">Nombre del Comercio</label>
                   <div class="col-sm-8">
@@ -177,6 +163,20 @@
                   </select>
                   </div>
                 </div>
+                <hr>
+                <div class="form-group row">
+                  <label class="col-sm-4 col-form-label bg-gradient-danger">Teléfono Contacto</label>
+                  <div class="col-sm-8">
+                  <input required type="text" class="form-control" name="telefono_contacto" placeholder="Nro de Teléfono celular" aria-describedby="emailHelp">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-sm-4 col-form-label bg-gradient-danger">Correo Electrónico</label>
+                  <div class="col-sm-8">
+                  <input required type="text" class="form-control" name="correo_contacto" placeholder="Correo Electrónico para contacto" aria-describedby="emailHelp">
+                  </div>
+                </div>
+                <hr>
                 <div class="form-group row">
                   <label class="col-sm-4 col-form-label">Usuario</label>
                   <div class="col-sm-8">

@@ -13,6 +13,7 @@
 
     <div class="container-fluid">
         <div class="row">
+            @if ($nivel ?? '')
             <div class="col-lg-3 col-6">
               <!-- small box -->
               <div class="small-box bg-info">
@@ -87,9 +88,14 @@
                   <a href="{{ url('certificados?porVencer=1')}}" class="small-box-footer">Más info <i class="fas fa-arrow-circle-right"></i></a>
                 </div>
               </div>
+              @endif
+              
           </div>
+          
         <div class="card">
-            <h5 class="card-header bg-blue"> Dirección Bomberos de la Policía de Misiones</h5>
+            <div class="card-header bg-blue">
+                Dirección Bomberos de la Policía de Misiones
+            </div>
             <div class="card-body">
                 <h3>Datos de Usuario</h3>
                 <img src="{{  $obj[0]["foto"] }}" class="img-fluid rounded float-right" alt="User Image">
@@ -98,7 +104,12 @@
                 Dependencia: {{ $obj[0]["dependencia"] }}<br>
                 Escalafón: {{ $obj[0]["escalafon"] }}<br>  
                 
+                
+                
             </div>
+            <div class="card-footer text-muted">
+                {{ $total_cert}} Certificados Cargados el usuario: {{ Auth::user()->username }}
+              </div>
           </div>
     </div>
 </div>
