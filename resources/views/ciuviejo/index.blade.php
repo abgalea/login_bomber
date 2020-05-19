@@ -7,6 +7,24 @@
     <div class="col-lg-12">
       <div class="card">
         <div class="card-header bg-gradient-olive">
+          <h3 class="card-title">Buscador de Certificados Anteriores</h3>
+        </div>
+        <div class="card-body">
+          <form class="form-inline ml-3">
+            <div class="input-group input-group-sm">
+                <input class="form-control form-control-navbar" name="search" type="search" placeholder="Buscador"
+                    aria-label="Search">
+                <div class="input-group-append">
+                    <button class="btn btn-navbar" type="submit">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </div>
+        </form>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header bg-gradient-olive">
           <h3 class="card-title">Lista de Certificados - CIU Viejos</h3>
         </div>
         <div class="card-body">
