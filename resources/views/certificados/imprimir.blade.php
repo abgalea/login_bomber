@@ -25,7 +25,7 @@
                     <tbody>
                       <tr>
                         <td ><img src='{{ public_path() . '/img/logo_bom.jpg' }}' width='50' /></td>
-                        <td ><h2>DIRECCIÓN BOMBEROS - POLICÍA DE MISIONES</h2></td>
+                        <td ><h2>CIU N° {{ $certificados->id}} - ORIGINAL</h2></td>
                         {{-- <td ><img src={{ public_path() .'/img/logo_polmis.jpg'}} width='50' /></td> --}}
                         <td align="right">
                             @php
@@ -63,7 +63,7 @@
                         <tbody>
                           <tr>
                             <td ><img src='{{ public_path() . '/img/logo_bom.jpg' }}' width='50' /></td>
-                            <td ><h2>CIU N° - DUPLICADO</h2></td>
+                            <td ><h2>CIU N° {{ $certificados->id}} - DUPLICADO</h2></td>
                             {{-- <td ><img src={{ public_path() .'/img/logo_polmis.jpg'}} width='50' /></td> --}}
                             <td align="right">
                                 @php
@@ -101,7 +101,7 @@
                         <tbody>
                           <tr>
                             <td ><img src='{{ public_path() . '/img/logo_bom.jpg' }}' width='50' /></td>
-                            <td ><h2>CIU N° - TRIPLICADO</h2></td>
+                            <td ><h2>CIU N° {{ $certificados->id}} - TRIPLICADO</h2></td>
                             {{-- <td ><img src={{ public_path() .'/img/logo_polmis.jpg'}} width='50' /></td> --}}
                             <td align="right">
                                 @php
