@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\UserFormRequest;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -36,7 +37,8 @@ class UserController extends Controller
         $usuarios = new User();
         $usuarios->name = $request->input('name');
         $usuarios->email = $request->input('email');
-        $usuarios->password = $request->input('password');
+        $usuarios->password = Hash::make($request->input('password'));
+        
 
         $usuarios->save();
         //$users = User::all();
@@ -62,6 +64,10 @@ class UserController extends Controller
         $usuarios = User::findOrFail($id);
         $usuarios->name = $request->get('name');
         $usuarios->email = $request->get('email');
+        if($request->get('password') != ''){
+            $usuarios->password = Hash::make($request->get('password'));
+        }
+        
         
 
         $usuarios->update();

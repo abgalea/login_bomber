@@ -16,7 +16,8 @@ class CertificadoController extends Controller
         
         
         if (Auth::user()->nivel == 'cargador'){
-            $certificados = Certificados::where('usuario', '=', Auth::user()->username)
+            $certificados = Certificados::where('localidad', 'LIKE', Auth::user()->localidad)
+            ->where('dependencia','LIKE',Auth::user()->dependencia)
              ->orderBy('id', 'desc')
              ->paginate(5);
              return view('certificados.index', ['certificados' => $certificados, 'search' => $query]);
