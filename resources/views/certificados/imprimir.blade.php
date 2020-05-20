@@ -9,7 +9,7 @@
         text-transform: uppercase;
         }
         .contenido{
-        font-size: 12px;
+        font-size: 15px;
         padding-top: 5px;
         }
     </style>
@@ -36,8 +36,8 @@
                       </tr>
                     </tbody>
                   </table>
-                        <h3>EL FUNCIONARIO DE POLICIA QUE SUSCRIBE CERTIFICA QUE: EL USO / LOCAL<br>
-                        CIU NRO: {{ $certificados->id}}</h3>
+                        <h3>EL FUNCIONARIO DE POLICIA QUE SUSCRIBE CERTIFICA QUE: EL USO / LOCAL</h3>
+                        {{-- CIU NRO: {{ $certificados->id}}--}} 
                         Titular: <b>{{ $certificados->nombre_comerciante}}.</b><br> 
                         Comercio: <b>{{ $certificados->nombre_comercio}}.</b><br> 
                         Rubro: <b>{{ $certificados->rubro}}.</b><br>
@@ -48,10 +48,6 @@
                         Valido Desde: <b>{{date('d/m/y', strtotime($certificados->desde))}}</b> Hasta: <b>{{date('d/m/y', strtotime($certificados->hasta))}}</b>
                         <br>Emitido: <b>{{date('d/m/y', strtotime($certificados->fecha))}}</b> <br> <b>Puede Validar los Datos del Presente 
                           Certificado en la Siguiente URL - <a href="https://policiamisiones.gob.ar/bomberos/index.php?id={{$certificados->id}}">https://policiamisiones.gob.ar/bomberos/</a></b>
-                          <br>
-                          <br>
-                          <br>
-                          <br>
                           <br>
                           <br>
                           <br>
@@ -75,7 +71,7 @@
                         </tbody>
                       </table>
                         <b>EL FUNCIONARIO DE POLICIA QUE SUSCRIBE CERTIFICA QUE: EL USO / LOCAL</b><br>
-                        CIU NRO: <b>{{ $certificados->id}}</b><br>
+                        {{-- CIU NRO: <b>{{ $certificados->id}}</b><br> --}}
                         Titular: <b>{{ $certificados->nombre_comerciante}}.</b><br> 
                         Comercio: <b>{{ $certificados->nombre_comercio}}.</b><br> 
                         Rubro: <b>{{ $certificados->rubro}}.</b><br>
@@ -86,10 +82,6 @@
                         Valido Desde: <b>{{date('d/m/y', strtotime($certificados->desde))}}</b> Hasta: <b>{{date('d/m/y', strtotime($certificados->hasta))}}</b>
                         <br>Emitido: <b>{{date('d/m/y', strtotime($certificados->fecha))}}</b> <br> <b>Puede Validar los Datos del Presente 
                             Certificado en la Siguiente URL - <a href="https://policiamisiones.gob.ar/bomberos/index.php?id={{$certificados->id}}">https://policiamisiones.gob.ar/bomberos/</a></b>
-                          <br>
-                          <br>
-                          <br>
-                          <br>
                           <br>
                           <br>
                           <br>
@@ -113,7 +105,7 @@
                         </tbody>
                       </table>
                         <b>EL FUNCIONARIO DE POLICIA QUE SUSCRIBE CERTIFICA QUE: EL USO / LOCAL</b><br>
-                          CIU NRO: <b>{{ $certificados->id}}</b><br>
+                          {{-- CIU NRO: <b>{{ $certificados->id}}</b><br> --}}
                         Titular: <b>{{ $certificados->nombre_comerciante}}.</b><br> 
                         Comercio: <b>{{ $certificados->nombre_comercio}}.</b><br> 
                         Rubro: <b>{{ $certificados->rubro}}.</b><br>
@@ -124,7 +116,7 @@
                         Valido Desde: <b>{{date('d/m/y', strtotime($certificados->desde))}}</b> Hasta: <b>{{date('d/m/y', strtotime($certificados->hasta))}}</b>
                         <br>Emitido: <b>{{date('d/m/y', strtotime($certificados->fecha))}}</b> <br> <b>Puede Validar los Datos del Presente 
                             Certificado en la Siguiente URL - <a href="https://policiamisiones.gob.ar/bomberos/index.php?id={{$certificados->id}}">https://policiamisiones.gob.ar/bomberos/</a></b>
-                        <br><br><br><br><br></p>
+                        <br><br></p>
                       
                 </div>
               </div>
