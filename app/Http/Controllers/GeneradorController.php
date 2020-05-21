@@ -14,6 +14,6 @@ class GeneradorController extends Controller
         //$certificados = Certificados::where('id', '=', $id);
         $pdf = \PDF::loadView('certificados.imprimir', ['certificados'=>Certificados::findOrFail($id)])
         ->setPaper('legal', 'portrait');
-        return $pdf->download('CIU_Nro_'.$id.'.pdf');
+        return $pdf->stream('CIU_Nro_'.$id.'.pdf');
    }
 }
